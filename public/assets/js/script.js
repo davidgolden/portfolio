@@ -191,7 +191,8 @@ sendButton.addEventListener('click', function() {
 		sendButton.innerHTML = 'Message Received';
       } else { // no image found
         sendButton.classList.remove('disabled');
-        console.alert('There was a problem processing your request!');
+        sendButton.innerHTML = 'Send';
+        alert('There was a problem processing your request!');
       }
     }
   }
