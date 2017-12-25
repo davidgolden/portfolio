@@ -176,9 +176,9 @@ let sendButton = document.getElementById('sendEmailButton')
 // sendButton.preventDefault();
 sendButton.addEventListener('click', function() {
 	console.log('sent')
-	let name = document.getElementsByName('name')[0];
-	let email = document.getElementsByName('email')[0];
-	let message = document.getElementsByName('message')[0];
+	let name = document.getElementsByName('name')[0].value;
+	let email = document.getElementsByName('email')[0].value;
+	let message = document.getElementsByName('message')[0].value;
 	sendButton.classList.add('disabled');
 	sendButton.innerHTML = "<i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><span class='sr-only'>Loading...</span>"; // set to spinner
 	let xml = new XMLHttpRequest();
