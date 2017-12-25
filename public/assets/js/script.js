@@ -6,30 +6,33 @@ var scrollIcon = document.getElementById('scrollIcon');
 var mobileNavOpen = false;
 var scrollDown = false;
 var navLink = document.getElementsByClassName('navLink');
+let navIcons = document.getElementById('mobileIcons');
 var isSmall;
 
 function turnOnMobile() {
 	navBar.classList.remove('normalNav');
 	navBar.classList.add('navOnScroll');
+	navIcons.style.display='block';
 }
 
 function turnOffMobile() {
 	navBar.classList.remove('navOnScroll');
 	navBar.classList.add('normalNav');
 	navBar.classList.remove('mobileNav');
+	navIcons.style.display='none';
 }
 
-function checkY(y) {
-	if(window.scrollY > (y*.25)) {
-		turnOnMobile();
-		scrollDown = true;
-	}
-	// When you scroll up, turn off mobile
-	else if(isSmall == false) {
-		turnOffMobile();
-		scrollDown = false;
-	}
-}
+// function checkY(y) {
+// 	if(window.scrollY > (y*.25)) {
+// 		turnOnMobile();
+// 		scrollDown = true;
+// 	}
+// 	// When you scroll up, turn off mobile
+// 	else if(isSmall == false) {
+// 		turnOffMobile();
+// 		scrollDown = false;
+// 	}
+// }
 
 function checkX(x) {
 	if(x <= 960) {
@@ -89,33 +92,31 @@ for(var i=0; i<navLink.length; i++) {
 
 var projects = [
 	{
+		name: "recipe-cloud",
+		imgURL: "assets/images/recipebook.png",
+		link: "http://www.recipe-cloud.com",
+		desc: "<h3>Recipe Cloud</h3> <br> Recipe App for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book, and edit just about anything!",
+		tags: ["HTML", "CSS", "JS", "NodeJS", "Express", "MongoDB", "Bootstrap"]
+	},
+	{
 		name: "tfc",
 		imgURL: "assets/images/tfc.png",
 		link: "http://www.david-golden.com/TFC2",
-		desc: "<span style='color: #609994'>Table to Farm Compost<br>[Still In Development]</span> <br><br> This website designed for a 'curbside composting' company utilizes vanilla HTML, CSS, and JS. Although this website is still a work in progress, take a look at the JS/CSS transitions, and especially the Sign Up page which utilizes Google Maps API.",
-		tags: ["HTML", "CSS", "JavaScript", "Google Maps API", "Stripe API"]
+		desc: "<h3>Table to Farm Compost</h3> <br> This website for my curbside composting company prompts users to enter their address and immediately assigns them a pick up day using Google Maps API. There is a user dashboard for customers to update their payment information, address, or request compost, and an admin dashboard for monitoring all customer details.",
+		tags: ["HTML", "CSS", "JS", "Google Maps API", "Stripe API", "NodeJS", "Express", "MongoDB"]
 	},
 	{
-		name: "todo",
-		imgURL: "assets/images/todo.jpg",
-		link: "http://www.david-golden.com/todo",
-		desc: "<span style='color: #609994'>To Do List</span> <br><br> A simple to do list application that allows users to add and delete items from a list.",
-		tags: ["HTML", "CSS", "JavaScript", "jQuery"]
-	},
-	{
-		name: "colorgame",
-		imgURL: "assets/images/colorgame.jpg",
-		link: "http://www.david-golden.com/colorgame",
-		desc: "<span style='color: #609994'>Color Game</span> <br><br> A fun RGB color guessing game that generates a random color, then the player must try to guess which colored square is a match!",
-		tags: ["HTML", "CSS", "JavaScript"]
+		name: "portfolio",
+		imgURL: "assets/images/profilesite.png",
+		desc: "<h3>This Site!</h3><br>It's nothing super fancy, but I built this website using entirely vanilla CSS (including CSS Grid) and JS without the use of any frameworks.",
+		tags: ["HTML", "CSS", "JS"]
 	}
-
 ];
 
 var displayProject = document.getElementById('displayProject');
-var displayImage = document.getElementById('displayImage');
-var displayDesc = document.getElementById('displayDesc');
-var displayTags = document.getElementById('displayTags');
+var displayImage = document.getElementsByClassName('item-image')[0];
+var displayDesc = document.getElementsByClassName('item-desc')[0];
+var displayTags = document.getElementsByClassName('item-tags')[0];
 var nextProject = document.getElementsByClassName('fa-chevron-right')[0];
 var lastProject = document.getElementsByClassName('fa-chevron-left')[0];
 var currentProject = 0;
@@ -132,7 +133,7 @@ nextProject.addEventListener('click', function() {
 
 function showProject(currentProject) {
 	displayImage.innerHTML = "<a href='"+projects[currentProject].link+"'target='_blank'><img src='"+projects[currentProject].imgURL+"'></a>";
-	displayDesc.innerHTML = "<p>"+projects[currentProject].desc+"</p>";
+	displayDesc.innerHTML = `<p>${projects[currentProject].desc}</p>`;
 	displayTags.innerHTML = "";
 	for(var i = 0; i<projects[currentProject].tags.length; i++) {
 		displayTags.innerHTML += "<span>"+projects[currentProject].tags[i]+"</span>";

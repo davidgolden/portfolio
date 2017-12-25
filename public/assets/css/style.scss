@@ -1,8 +1,10 @@
 /******* Global Styles *********/
 
-$darkblue: #0B6873;
-$lightblue: #609994;
-$darkbrown: #35291f;
+$blue: #70cff1;
+$dark: #3C89A4;
+$light: white;
+$other: $dark;
+//#A75A08
 
 $break: 850px;
 
@@ -26,50 +28,61 @@ body:before {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background: url(/assets/images/chesler.jpg) no-repeat center center;
+  background: url(/assets/images/chesler3.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-h1, h2, h4 {
-	font-family: 'Averia Serif Libre', cursive;
-	letter-spacing: 10px;
-	color: $darkblue;
+h1, h2, h3, h4 {
+	// font-family: 'Averia Serif Libre', cursive;
+	font-family: 'Inconsolata', monospace;
+	color: $light;
+	// -webkit-text-stroke: 2px $dark;
 }
 
 h2 {
 	font-size: 4em;
 }
 
+* {
+	font-family: 'Quicksand', sans-serif;
+}
+
 p {
-	color: $darkblue;
-	font-family: 'Droid Serif', serif;
+	color: $dark;
+	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 1px;
 }
 
 li, a, h3 {
-	font-family: 'Droid Serif', serif;
-	color: $lightblue;
+	font-family: 'Quicksand', sans-serif;
+	color: $light;
 }
 
-/******* Section Styles *********/
-
-.hasBackground {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center fixed;
+.container {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto 100vh 100vh 100vh 100vh;
 }
+
+section > h2 {
+	margin-bottom: 25px;
+	@media(max-width: $break) {
+		font-size: 1.7rem;
+	}
+}
+
 
 /******* Header Section Styles *********/
 
 #titlePage {
+	grid-row-start: 2;
 	h1 {
-		font-size: 550%;
+		font-size: 4rem;
 		margin-top: 15%;
 		text-align: center;
-		color: $darkblue;
 
 		@media (max-width: $break) {
 			font-size: 350%;
@@ -78,11 +91,10 @@ li, a, h3 {
 		}
 	}
 
-	h3 {
-		font-size: 200%;
+	h2 {
+		font-size: 1.5rem;
 		padding-bottom: 3%;
 		text-align: center;
-		color: $lightblue;
 		letter-spacing: 10px;
 
 		@media (max-width: $break) {
@@ -93,144 +105,149 @@ li, a, h3 {
 	}
 
 	> a {
-		color: $darkblue;
-		font-family: 'Averia Serif Libre', cursive;
-		background-color: transparent;
-		border: 1px solid $darkblue;
+		color: $dark;
+		background-color: $light;
+		border: 1px solid $dark;
 		text-decoration: none;
 		padding: 10px;
 		margin: 0 auto;
 		display: block;
 		width: 150px;
+		border-radius: 10px;
 	}
 
 	> a:hover {
-		background-color: white;
+		border-width: 5px;
 	}
+}
+
+.icon:active::after, .icon:hover::after {
+  content: attr(data-content);
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  width: auto;
+  border: 4px solid $dark;
+  background-color: $light;
+  padding: 12px;
+  color: $dark;
+  font-size: 14px;
+  z-index: 1;
 }
 
 /******* Portfolio Section Styles *********/
 
 #portfolio {
-	padding-top: 5%;
-	height: 500px;
-
-	h2 {
-		text-align: center;
-		margin-top: 15px;
+	padding-top: 10%;
+	grid-row-start: 3;
+	text-align: center;
+	
+	.item-container {
+		
+		margin: 0 auto;
+		width: 60%;
+		display: grid;
+		grid-template-columns: 9% 34% 43% 9%;
+		grid-template-rows: 50% 18% auto;
+		grid-column-gap: 2%;
+		grid-row-gap: 25px;
+		
+		@media(max-width: $break) {
+			width: 100%;
+		}
 	}
-
+	
 	i {
-		font-size: 32px;
+		font-size: 5rem;
 		cursor: pointer;
-		height: 100%;
-		margin-top: 110px;
-		padding: 0 10px;
+		color: $light;
+		
+		@media(max-width: $break) {
+			font-size: 3rem;
+		}
 	}
 
 	i:hover {
-		color: $darkblue;
+		color: $dark;
 	}
-
-	.fa-chevron-left {
-		color: white;
-		display: inline-block;
-		float: left;
+	
+	.left-arrow {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		align-self: center;
 	}
-
-	.fa-chevron-right {
-		color: white;
-		display: inline-block;
-		float: right;
+	
+	.right-arrow {
+		grid-column-start: 4;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		align-self: center;
 	}
-
-	#displayProject {
-		padding-top: 30px;
-		padding-bottom: 20px;
-		width: 850px;
-		height: 400px;
-		margin: 0 auto;
-		background-color: rgba(11, 104, 115,.5);
-		border-radius: 10px;
-
-		@media (max-width: $break) {
-			width: 90%;
-			height: auto;
-		}	
-	}
-
-	#displayImage {
-		float: left;
-		display: inline-block;
-		width: 400px / 850px * 100%;
-		display: inline-block;
-		margin: 0 auto;
-
-		@media (max-width: $break) {
-			display: block;
-			width: 70%;
-			float: none;
-			margin: 0 auto;
-		}
-
+	
+	.item-image {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		align-content: center;
+		border: 2px $light;
+		
 		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			border-radius: 10px;
-
-			@media (max-width: $break) {
-				width: 100%;
-				margin: 0 auto;
-				float: none;
-			}
+		}
+		@media(max-width: $break) {
+			grid-column-end: 4;
 		}
 	}
-
-	#displayImage:hover {
-		opacity: .5;
-	}
-
-	#displayDesc {
-		width: 300px / 850px * 100%;
-		height: 300px;
-		background-color: rgba(255,255,255,.8);
+	
+	.item-desc {
 		border-radius: 10px;
-		color: #3971a6;
-		display: inline-block;
-		float: right;
-		margin-right: 10px;
-
-		@media (max-width: $break) {
-			display: block;
-			height: auto;
-			width: 70%;
-			float: none;
-			margin: 0 auto;
+		padding: 5px;
+		background-color: $light;
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		color: $dark;
+		min-height: 200px;
+		align-content: center;
+		border: 2px $light;
+		
+		@media(max-width: $break) {
+			grid-column-start: 2;
+			grid-column-end: 4;
+			grid-row-start: 2;
+			grid-row-end: 3;
 		}
-
-		p {
-			padding: 20px;
+		
+		h3 {
+			color: $dark;
+			font-size: 1.5rem;
 		}
 	}
-
-	#displayTags {
-		width: 400px / 850px * 100%;
-		height: auto;
-		display: inline-block;
-		margin: 0 auto;
-
-		@media (max-width: $break) {
-			width: 70%;
-			height: auto;
-			margin: 0 auto;
-			display: block;
-		}
-
+	
+	.item-tags {
+		grid-column-start: 2;
+		grid-column-end: 4;
+		grid-row-start: 2;
+		grid-row-end: 3;
 		span {
-			background-color: white;
+			background-color: $light;
 			padding: 5px;
-			color: $darkblue;
+			color: $dark;
 			border-radius: 5px;
 			margin: 4px;
 			display: inline-block;
+		}
+		@media(max-width: $break) {
+			grid-row-start: 3;
+			grid-row-end: 4;
 		}
 	}
 }
@@ -238,12 +255,8 @@ li, a, h3 {
 /******* Skills Section Styles *********/
 
 #skills {
-	padding-top: 5%;
-	margin-top: 10%;
-
-	@media (max-width: $break) {
-		margin-top: 50%;
-	}
+	padding-top: 10%;
+	grid-row-start: 4;
 
 	h2 {
 		text-align: center;
@@ -258,7 +271,7 @@ li, a, h3 {
 	.aboutContainer {
 		width: 40%;
 		margin: 0 auto;
-		background-color: rgba(255,255,255,.5);
+		background-color: $light;
 		border-radius: 10px;
 
 		@media (max-width: $break) {
@@ -270,13 +283,13 @@ li, a, h3 {
 /******* Contact Section Styles *********/
 
 #contact {
-	padding-top: 5%;
-	margin-top: 10%;
-	margin-bottom: 10%;
+	padding: 10% 0;
 	text-align: center;
+	grid-row-start: 5;
 
 	img {
-		padding: 10px;
+		margin: 10px;
+		border-radius: 10px;
 	}
 
 	form {
@@ -287,7 +300,7 @@ li, a, h3 {
 	}
 
 	input {
-		background-color: rgba(255,255,255,.5);
+		background-color: $light;
 		margin: 5px;
 		border-radius: 5px;
 		line-height: 1.5em;
@@ -296,7 +309,7 @@ li, a, h3 {
 	}
 
 	textarea {
-		background-color: rgba(255,255,255,.5);
+		background-color: $light;
 		margin: 5px;
 		border-radius: 5px;
 		height: 200px;
@@ -305,40 +318,40 @@ li, a, h3 {
 	}
 
 	input::-webkit-input-placeholder {
-		color: $darkblue;
+		color: $dark;
 	}
 
 	input:-moz-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	input::-moz-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	input:-ms-input-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	textarea::-webkit-input-placeholder {
-		color: $darkblue;
+		color: $dark;
 	}
 
 	textarea:-moz-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	textarea::-moz-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	textarea:-ms-input-placeholder{
-		color: $darkblue;
+		color: $dark;
 	}
 
 	button {
 		width: 310px;
-		background-color: $darkblue;
+		background-color: $dark;
 		border-radius: 5px;
 		color: white;
 		cursor: pointer;
@@ -347,19 +360,23 @@ li, a, h3 {
 	}
 
 	button:hover {
-		color: $darkblue;
-		background-color: white;
+		color: $dark;
+		background-color: $light;
 	}
 
 }
 
 /******* Navigation Styles *********/
 
+nav {
+	grid-row-start: 1;
+}
+
 .normalNav {
 	position: fixed;
-	right: 10px;
-	top: 10px;
-	height: 5%;
+	height: 60px;
+	width: 100%;
+	background-color: $blue;
 
 	ul {
 		list-style: none;
@@ -370,10 +387,23 @@ li, a, h3 {
 		float: left;
 		font-size: 1.1em;
 		cursor: pointer;
-		color: $lightblue;
+		color: $other !important;
 		padding: 15px;
-		border-right: 2px solid #35291f;
+		border-right: 2px solid $other;
 		cursor: pointer;
+	}
+	
+	.icon, .icon a {
+		border: none;
+		padding: 3px;
+		font-size: 2rem;
+		color: $dark !important;
+	}
+	.icon:first-of-type {
+		padding-left: 15px;
+	}
+	.icon:hover, .icon:hover a {
+		color: $light !important;
 	}
 
 	ul li:last-child {
@@ -385,7 +415,7 @@ li, a, h3 {
 	}
 
 	ul li a:hover {
-		color: $darkblue;
+		color: $dark;
 	}
 }
 
@@ -396,15 +426,11 @@ li, a, h3 {
 .navOnScroll {
 	width: 100%;
 	position: fixed;
-	background-color: #35291f;
+	background-color: $other;
 	top: 0;
 	right: 0;
 	height: 60px;
 	z-index: 2;
-
-	@media (max-width: $break) {
-		height: 10%;
-	}
 
 	ul {
 		display: none;
@@ -431,7 +457,7 @@ li, a, h3 {
 		display: block;
 		text-align: right;
 		width: 100%;
-		background-color: #35291f;
+		background-color: $other;
 	}
 
 	ul li {

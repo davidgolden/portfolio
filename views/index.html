@@ -5,54 +5,78 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700|Droid+Serif|Slabo+27px" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Quicksand" rel="stylesheet">
+
 	<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 
-<section id="titlePage" class='hasBackground'>
-		<h1>David Golden</h1>
-		<h3><em>Front End Web Developer</em></h3>
-		<a href="#contact">Start a Conversation</a>
+<div class='container'>
 	
-	<nav role = 'navigation' class='normalNav'>
+<nav role = 'navigation' class='normalNav'>
 	<span id='scrollIcon'><i class="fa fa-bars" aria-hidden="true"></i></span>
 		<ul>
-			<li><a class = 'navLink' href="#titlePage">Home</a></li>
-			<li><a class = 'navLink' href="#portfolio">Portfolio</a></li>
-			<li><a class = 'navLink' href="#skills">About</a></li>
-			<li><a class = 'navLink' href="#contact">Contact</a></li>
+			<li class='icon' data-content='GitHub Portfolio'><a class='navLink' target='_blank' href='https://github.com/davidgolden'><i class="fa fa-github" aria-hidden="true"></i></a></li>
+			<li class='icon' data-content='Email Me!'><a class='navLink' href='mailto:davidgoldeninbox@gmail.com'><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+			<li class='icon' data-content='Resume'><a class='navLink' href=''><i class="fa fa-user" aria-hidden="true"></i></a></li>
+		</ul>
+		<ul>
+			<li><a class = 'navLink' href="#titlePage">#home</a></li>
+			<li><a class = 'navLink' href="#portfolio">#portfolio</a></li>
+			<li><a class = 'navLink' href="#skills">#about</a></li>
+			<li><a class = 'navLink' href="#contact">#contact</a></li>
+			<li id='mobileIcons'>
+				<a class='navLink' target='_blank' href='https://github.com/davidgolden'><i class="fa fa-github" aria-hidden="true"></i></a>
+				<a class='navLink' href='mailto:davidgoldeninbox@gmail.com'><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				<a class='navLink' href=''><i class="fa fa-user" aria-hidden="true"></i></a>
+			</li>
 		</ul>
 		
 	</nav>
+	
+<section id="titlePage">
+		<h1>const david_golden;</h1>
+		<!--<h2>david_golden = 'web developer';</h2>-->
+	
+	
 </section>
 
 <section id='portfolio'>
-	<h2>Portfolio</h2>
+	<h2>let portfolio =</h2>
 	
-	<div id="displayProject">
-		<i class="fa fa-chevron-left" aria-hidden="true"></i>
-		<i class="fa fa-chevron-right" aria-hidden="true"></i>
-		<div id='displayImage' class='one'></div>
-		<div id="displayDesc" class='two'></div>
-		<div id="displayTags" class='three'></div>
+	<div class='item-container'>
+		<div class='left-arrow'>
+			<i class="fa fa-chevron-left" aria-hidden="true"></i>
+		</div>
 		
+		<div class='item-image'>
+		</div>
+		<div class='item-desc'>
+		</div>
+		<div class='item-tags'>
+			</div>
+		<div class='right-arrow'>
+			<i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</div>
 	</div>
 	
 </section>
 <section id='skills' class='hasBackground'>
-<h2>About</h2>
+<h2>let about =</h2>
 <div class='aboutContainer'>
-	<p>I am a front-end web developer. My front-end stack includes HTML5, CSS3 (vanilla and Sass), and vanilla Javascript. I have had some exposure to Bootstrap, jQuery, and server-side languages PHP and NodeJS. I am self-taught, having completed the front-end component of <a href="https://www.udemy.com/the-web-developer-bootcamp/learn/v4/overview">Colt Steele's Web Development Bootcamp</a>, worked through Lynda courses, and studied StackExchange as well as many other other online resources.<br><br>
+	<p>I am a web developer whose stack includes HTML5, CSS3, JS (ES6), NodeJS, Express, and MongoDB, Bootstrap, and React/Redux.
+	I am interested in web application development, on either front or back end.<br><br>
 
-	Outside of web development, I hold a B.S. in Environmental Science from Dickinson College. I own a curbside composting company in Durango, CO. And my most time-consuming hobby is ultra distance trail running in the mountains.</p>
+	I hold a B.S. in Environmental Science from Dickinson College, and when I'm not coding I'm busy either operating a curbside composting company
+	that I own in Durango, CO or running ridiculously silly distances on the local trails.</p>
 </div>
 </section>
 
 
 
 <section id='contact'>
-	<h2>Contact</h2>
-	<img src="assets/images/selfie_optimized.jpg" style="height: 400px">
+	<h2>let contact =</h2>
+	<img src="assets/images/portfoliopic.jpg" style="height: 400px">
 	<form action='/' method='POST'>
 		<input type="text" name="form[first]" placeholder = "First Name" required>
 		<input type="text" name="form[last]" placeholder="Last Name" required>
@@ -61,6 +85,8 @@
 		<button type='submit'>Send</button>
 	</form>
 </section>
+
+</div>
 
 </body>
 <script type="text/javascript" src='/assets/js/script.js'></script>
