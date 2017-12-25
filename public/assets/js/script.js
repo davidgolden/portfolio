@@ -173,8 +173,8 @@ function displayLastProject() {
 // SEND EMAIL!
 // document.getElementById('contactForm').preventDefault();
 let sendButton = document.getElementById('sendEmailButton')
-sendButton.preventDefault();
-sendButton.addEventListener('click', function() {
+sendButton.addEventListener('click', function(event) {
+	event.preventDefault();
 	console.log('sent')
 	let name = document.getElementsByName('name')[0].value;
 	let email = document.getElementsByName('email')[0].value;
