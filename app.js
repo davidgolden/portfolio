@@ -43,7 +43,7 @@ app.post('/', function(req, res) {
                 transporter.sendMail(mailOptions, (error, info) => {
                     console.log('called');
                     if (error) {
-                        console.log('error');
+                        console.log(error);
                         res.send('error');
                     } else {
                         console.log('sent');
