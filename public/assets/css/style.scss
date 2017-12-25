@@ -286,6 +286,12 @@ section > h2 {
 	padding: 10% 0;
 	text-align: center;
 	grid-row-start: 5;
+	
+	.disabled {
+		cursor: default;
+		opacity: .8;
+		pointer-events: none;
+	}
 
 	img {
 		margin: 10px;
@@ -359,7 +365,7 @@ section > h2 {
 		padding: 10px;
 	}
 
-	button:hover {
+	button {
 		color: $dark;
 		background-color: $light;
 	}

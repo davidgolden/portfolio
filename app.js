@@ -14,9 +14,11 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
-    let form = req.body.form;
+    let name = req.body.name;
+    let email = req.body.email;
+    let message = req.body.message;
     
-    let sendEmail = function(first, last, email, message) {
+    let sendEmail = function(name, email, message) {
         var transporter = nodemailer.createTransport({
                     host: 'sub5.mail.dreamhost.com',
                     port: 587,
@@ -34,20 +36,22 @@ app.post('/', function(req, res) {
                 var mailOptions = {
                     from: email, // sender address
                     to: 'davidgoldeninbox@gmail.com', // list of receivers
-                    subject: `Message from ${first} ${last}`, // Subject line
+                    subject: `Message from ${name}`, // Subject line
                     html: message // html body
                 };
             
                 transporter.sendMail(mailOptions, (error, info) => {
                     console.log('called');
                     if (error) {
-                        return res.redirect('/');
+                        console.log('error');
+                        res.send('error');
                     } else {
-                        res.redirect('/');
+                        console.log('sent');
+                        res.send('sent');
                     }
                 });
     }
-    sendEmail(form.first, form.last, form.email, form.message);
+    sendEmail(name, email, message);
 })
 
 app.get('*', function(req, res) {

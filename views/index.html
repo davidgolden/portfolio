@@ -28,7 +28,7 @@
 			<li id='mobileIcons' style='display: none'>
 				<a class='navLink' target='_blank' href='https://github.com/davidgolden'><i class="fa fa-github" aria-hidden="true"></i></a>
 				<a class='navLink' href='mailto:davidgoldeninbox@gmail.com'><i class="fa fa-envelope" aria-hidden="true"></i></a>
-				<a class='navLink' href=''><i class="fa fa-user" aria-hidden="true"></i></a>
+				<a class='navLink' href='#'><i class="fa fa-user" aria-hidden="true"></i></a>
 			</li>
 		</ul>
 		
@@ -77,12 +77,11 @@
 <section id='contact'>
 	<h2>let contact =</h2>
 	<img src="assets/images/portfoliopic.jpg" style="height: 400px">
-	<form action='/' method='POST'>
-		<input type="text" name="form[first]" placeholder = "First Name" required>
-		<input type="text" name="form[last]" placeholder="Last Name" required>
-		<input type="email" name="form[email]" placeholder="Email" required>
-		<textarea name='form[message]' placeholder='Message' required></textarea>
-		<button type='submit'>Send</button>
+	<form id='contactForm'>
+		<input type="text" name="name" placeholder = "Name" required>
+		<input type="email" name="email" placeholder="Email" required>
+		<textarea name='message' placeholder='Message' required></textarea>
+		<button type='button' id='sendEmailButton'>Send</button>
 	</form>
 </section>
 

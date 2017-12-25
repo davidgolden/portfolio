@@ -51,17 +51,17 @@ window.addEventListener('load', function() {
 })
 
 // When you scroll down, turn on mobile
-window.addEventListener('scroll', function() {
-	checkY(window.innerHeight);
-});
+// window.addEventListener('scroll', function() {
+// 	checkY(window.innerHeight);
+// });
 // When screen is resized, find out size, then turn on mobile if applicable
 window.addEventListener('resize', function() {
 	//resize background image
 	document.getElementById('titlePage').style.height = window.innerHeight+'px';
 	checkX(window.innerWidth);
-	if(scrollDown == true) {
-		checkY(window.innerHeight);
-	}
+	// if(scrollDown == true) {
+	// 	checkY(window.innerHeight);
+	// }
 })
 
 // On click of hamburger icon
@@ -82,7 +82,7 @@ for(var i=0; i<navLink.length; i++) {
 	navLink[i].addEventListener('click', function() {
 		navBar.classList.remove('mobileNav');
 		mobileNavOpen = false;
-		checkY(window.innerHeight);
+		// checkY(window.innerHeight);
 	})
 }
 // *********** End NavBar Script ***************
@@ -168,3 +168,37 @@ function displayLastProject() {
 	}
 	
 }
+
+
+// SEND EMAIL!
+// document.getElementById('contactForm').preventDefault();
+let sendButton = document.getElementById('sendEmailButton')
+// sendButton.preventDefault();
+sendButton.addEventListener('click', function() {
+	console.log('sent')
+	let name = document.getElementsByName('name')[0];
+	let email = document.getElementsByName('email')[0];
+	let message = document.getElementsByName('message')[0];
+	sendButton.classList.add('disabled');
+	sendButton.innerHTML = "<i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><span class='sr-only'>Loading...</span>"; // set to spinner
+	let xml = new XMLHttpRequest();
+	  xml.open("POST", "/", true);
+	  xml.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+	  xml.send(JSON.stringify({name: name, email: email, message: message}));
+  xml.onreadystatechange = function() {
+    if (xml.readyState === 4) {
+      if(xml.response === 'sent') { // on success
+		sendButton.innerHTML = 'Message Received';
+      } else { // no image found
+        sendButton.classList.remove('disabled');
+        console.alert('There was a problem processing your request!');
+      }
+    }
+  }
+  
+})
+
+
+  
+  
+  
