@@ -296,6 +296,11 @@ section > h2 {
 	img {
 		margin: 10px;
 		border-radius: 10px;
+		height: 359px;
+		
+		@media(max-width: $break) {
+			display: none;
+		}
 	}
 
 	form {
@@ -365,7 +370,7 @@ section > h2 {
 		padding: 10px;
 	}
 
-	button {
+	button:hover {
 		color: $dark;
 		background-color: $light;
 	}

@@ -222,7 +222,11 @@ section > h2 {
     pointer-events: none; }
   #contact img {
     margin: 10px;
-    border-radius: 10px; }
+    border-radius: 10px;
+    height: 359px; }
+    @media (max-width: 850px) {
+      #contact img {
+        display: none; } }
   #contact form {
     width: 300px;
     padding: 10px;
@@ -266,7 +270,7 @@ section > h2 {
     cursor: pointer;
     margin: 5px;
     padding: 10px; }
-  #contact button {
+  #contact button:hover {
     color: #3C89A4;
     background-color: white; }
 
