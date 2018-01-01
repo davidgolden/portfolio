@@ -106,6 +106,13 @@ var projects = [
 		tags: ["HTML", "CSS", "JS", "Google Maps API", "Stripe API", "NodeJS", "Express", "MongoDB"]
 	},
 	{
+		name: "movies",
+		imgURL: "assets/images/movie.png",
+		link: "http://movies.david-golden.com/",
+		desc: "<h3>Current Movies React App</h3> <br> An app that filters movies by release date and genre to help users find popular current movies. Built entirely vanilla CSS using React JS.",
+		tags: ["HTML", "CSS", "JS", "The Movie DB API", "ReactJS"]
+	},
+	{
 		name: "portfolio",
 		imgURL: "assets/images/profilesite.png",
 		desc: "<h3>This Site!</h3><br>It's nothing super fancy, but I built this website using entirely vanilla CSS (including CSS Grid) and JS without the use of any frameworks.",
