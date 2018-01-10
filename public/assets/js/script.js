@@ -92,10 +92,17 @@ for(var i=0; i<navLink.length; i++) {
 
 var projects = [
 	{
+		name: "recipe-cloud-react",
+		imgURL: "assets/images/recipe-cloud-react.png",
+		link: "http://www.react.recipe-cloud.com",
+		desc: "<h3>Recipe Cloud (React)</h3> <br> Recipe App for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book!",
+		tags: ["HTML", "CSS", "JS", "NodeJS", "Express", "MongoDB", "ReactJS", "Bootstrap"]
+	},
+	{
 		name: "recipe-cloud",
 		imgURL: "assets/images/recipebook.png",
 		link: "http://www.recipe-cloud.com",
-		desc: "<h3>Recipe Cloud</h3> <br> Recipe App for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book, and edit just about anything!",
+		desc: "<h3>Recipe Cloud</h3> <br> This is the non-react (and original) version of the previous app. Recipe Cloud is for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book, and edit just about anything!",
 		tags: ["HTML", "CSS", "JS", "NodeJS", "Express", "MongoDB", "Bootstrap"]
 	},
 	{
