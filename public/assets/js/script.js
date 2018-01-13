@@ -120,6 +120,13 @@ var projects = [
 		tags: ["HTML", "CSS", "JS", "The Movie DB API", "ReactJS"]
 	},
 	{
+		name: "uglyduck",
+		imgURL: "assets/images/uglyduck.png",
+		link: "http://www.uglyduckstudio.com/",
+		desc: "<h3>Web Design Studio Website</h3> <br> Website I built for a personal freelance design/development company. Build in HTML, CSS3 (vanilla), and JS (vanilla; navbar is the only Bootstrap component) with a NodeJS backend.",
+		tags: ["HTML", "CSS", "JS", "Bootstrap"]
+	},
+	{
 		name: "portfolio",
 		imgURL: "assets/images/profilesite.png",
 		desc: "<h3>This Site!</h3><br>It's nothing super fancy, but I built this website using entirely vanilla CSS (including CSS Grid) and JS without the use of any frameworks.",
