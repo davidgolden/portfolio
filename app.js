@@ -3,6 +3,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer');
 
+require('dotenv').config()
+
 app.use(express.static(__dirname +'/public'));
 app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.urlencoded({extended: true}));
