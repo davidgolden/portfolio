@@ -17,29 +17,23 @@ app.post('/', function(req, res) {
     let name = req.body.name;
     let email = req.body.email;
     let message = req.body.message;
-    
+
     let sendEmail = function(name, email, message) {
         var transporter = nodemailer.createTransport({
-                    host: 'sub5.mail.dreamhost.com',
-                    port: 587,
-                    secure: false, // true for 465, false for other ports
-                    requireTLS: true, //Force TLS
-                    tls: {  
-                        rejectUnauthorized: false
-                    },
+                    service: 'Mailgun',
                     auth: {
-                        user: process.env.DREAMUSER,
-                        pass: process.env.DREAMPASS
+                        user: process.env.MAILUSER,
+                        pass: process.env.MAILPASS
                     }
                 });
-            
+
                 var mailOptions = {
                     from: email, // sender address
                     to: 'davidgoldeninbox@gmail.com', // list of receivers
                     subject: `Message from ${name}`, // Subject line
                     html: message // html body
                 };
-            
+
                 transporter.sendMail(mailOptions, (error, info) => {
                     console.log('called');
                     if (error) {
