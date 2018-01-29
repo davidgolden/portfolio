@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res) {
-    res.render('index.html');
+    res.send(process.env)
+    // res.render('index.html');
 })
 
 app.post('/', function(req, res) {
