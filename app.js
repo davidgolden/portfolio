@@ -1,9 +1,9 @@
+require('dotenv').config({path: './.env'});
+
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer');
-
-require('dotenv').config()
 
 app.use(express.static(__dirname +'/public'));
 app.engine('html', require('ejs').renderFile);
@@ -16,6 +16,7 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
+
     let name = req.body.name;
     let email = req.body.email;
     let message = req.body.message;
