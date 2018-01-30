@@ -129,6 +129,7 @@ var projects = [
 	{
 		name: "portfolio",
 		imgURL: "assets/images/profilesite.png",
+		link: '#',
 		desc: "<h3>This Site!</h3><br>It's nothing super fancy, but I built this website using entirely vanilla CSS (including CSS Grid) and JS without the use of any frameworks.",
 		tags: ["HTML", "CSS", "JS"]
 	}
