@@ -94,7 +94,7 @@ var projects = [
 	{
 		name: "recipe-cloud-react",
 		imgURL: "assets/images/recipe-cloud-react.png",
-		link: "https://reactrecipe.herokuapp.com/",
+		link: "https://www.recipe-cloud.com/",
 		desc: "<h3>Recipe Cloud (React)</h3> <br> Recipe App for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book!",
 		tags: ["HTML", "CSS", "JS", "NodeJS", "Express", "MongoDB", "ReactJS", "Bootstrap"]
 	},
@@ -115,7 +115,7 @@ var projects = [
 	{
 		name: "movies",
 		imgURL: "assets/images/movie.png",
-		link: "http://movies.david-golden.com/",
+		link: "https://boiling-escarpment-83243.herokuapp.com/",
 		desc: "<h3>Current Movies React App</h3> <br> An app that filters movies by release date and genre to help users find popular current movies. Built entirely vanilla CSS using React JS.",
 		tags: ["HTML", "CSS", "JS", "The Movie DB API", "ReactJS"]
 	},
@@ -187,7 +187,7 @@ function displayLastProject() {
 	else {
 		showProject(currentProject);
 	}
-	
+
 }
 
 
@@ -217,10 +217,5 @@ sendButton.addEventListener('click', function(event) {
       }
     }
   }
-  
+
 })
-
-
-  
-  
-  
