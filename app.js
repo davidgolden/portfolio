@@ -48,7 +48,9 @@ app.post('/', function(req, res) {
                     }
                 });
     }
-    sendEmail(name, email, message);
+    if(name != undefined && message !== '') {
+      sendEmail(name, email, message);
+    }
 })
 
 app.get('*', function(req, res) {
