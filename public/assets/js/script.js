@@ -101,7 +101,7 @@ var projects = [
 	{
 		name: "recipe-cloud",
 		imgURL: "assets/images/recipebook.png",
-		link: "https://stormy-badlands-13877.herokuapp.com/",
+		link: "https://v1recipe-cloud.herokuapp.com",
 		desc: "<h3>Recipe Cloud</h3> <br> This is the non-react (and original) version of the previous app. Recipe Cloud is for storing and sharing recipes and autopopulating grocery lists. Recipe URL image scraping, automatic totaling and converting of ingredient quantities/measurements, filter recipes by tags, browse others' recipes and add them to your recipe book, and edit just about anything!",
 		tags: ["HTML", "CSS", "JS", "NodeJS", "Express", "MongoDB", "Bootstrap"]
 	},
